@@ -1,5 +1,4 @@
-# nagarro
-Assignment
+# Nagarro Assignment
 
 ** To run it locally, please correct the path of Ms access DB file in application.properties files
 
