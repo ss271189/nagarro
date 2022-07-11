@@ -58,7 +58,6 @@
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.1</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -83,6 +82,15 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>com/ss/nagarro/NagarroAssignmentApplication.class</exclude>
+						<exclude>com/ss/nagarro/exception/*</exclude>
+						<exclude>com/ss/nagarro/model/*</exclude>
+						<exclude>com/ss/nagarro/entity/*</exclude>
+						<exclude>com/ss/nagarro/config*</exclude>
+					</excludes>
+				</configuration>
 				<version>0.8.7</version>
 				<executions>
 					<execution>

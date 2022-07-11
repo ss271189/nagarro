@@ -1,5 +1,6 @@
 package com.ss.nagarro.config;
 
+import lombok.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

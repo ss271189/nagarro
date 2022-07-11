@@ -1,8 +1,6 @@
 package com.ss.nagarro.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -11,7 +9,7 @@ import java.time.LocalDate;
 @Data
 public class AccountStatementRequest {
 
-
+    @NonNull
     private String accountId;
     private LocalDate fromDate;
     private LocalDate toDate;

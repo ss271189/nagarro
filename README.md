@@ -1,6 +1,8 @@
 # nagarro
 Assignment
 
+** To run it locally, please correct the path of Ms access DB file in application.properties files
+
 
 1) To authenticate and get JWT token 
 

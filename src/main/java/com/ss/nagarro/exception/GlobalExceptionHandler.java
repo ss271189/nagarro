@@ -1,6 +1,7 @@
 package com.ss.nagarro.exception;
 
 import com.ss.nagarro.model.CustomExceptionResponse;
+import lombok.Generated;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

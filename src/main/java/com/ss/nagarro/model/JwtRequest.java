@@ -1,6 +1,9 @@
 package com.ss.nagarro.model;
 
+import lombok.Generated;
+
 import java.io.Serializable;
+
 
 public class JwtRequest implements Serializable {
 

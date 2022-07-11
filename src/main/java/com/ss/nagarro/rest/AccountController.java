@@ -8,7 +8,6 @@ import com.ss.nagarro.model.AccountStatementResposne;
 import com.ss.nagarro.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,6 +23,7 @@ import java.util.stream.Collectors;
 @CrossOrigin
 @Validated
 @Slf4j
+
 public class AccountController {
 
     @Autowired
