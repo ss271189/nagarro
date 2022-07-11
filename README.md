@@ -1,5 +1,4 @@
-# nagarro
-Assignment
+# Nagarro Assignment
 
 
 1) To authenticate and get JWT token 
