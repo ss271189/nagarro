@@ -1,7 +1,6 @@
 package com.ss.nagarro.exception;
 
 import com.ss.nagarro.model.CustomExceptionResponse;
-import lombok.Generated;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +29,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(customExceptionResponse, HttpStatus.UNAUTHORIZED);
     }
 
+    @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         CustomExceptionResponse customExceptionResponse = new CustomExceptionResponse(LocalDate.now(), ex.getMessage(), request.getDescription(true));
         return new ResponseEntity<>(customExceptionResponse, HttpStatus.BAD_REQUEST);

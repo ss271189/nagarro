@@ -1,6 +1,5 @@
 package com.ss.nagarro.exception;
 
-import lombok.Generated;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

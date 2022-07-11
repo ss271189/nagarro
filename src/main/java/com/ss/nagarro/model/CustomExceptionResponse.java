@@ -1,7 +1,5 @@
 package com.ss.nagarro.model;
 
-import lombok.Generated;
-
 import java.time.LocalDate;
 
 public class CustomExceptionResponse {

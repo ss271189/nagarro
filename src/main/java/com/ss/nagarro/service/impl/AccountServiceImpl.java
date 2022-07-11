@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 @Service
 @Slf4j
@@ -47,7 +48,7 @@ public class AccountServiceImpl implements AccountService {
 
     private List<AccountStatement> getAccountStatements(AccountStatementRequest request) throws InvalidRequestException {
         List<AccountStatement> accountStatements=accountDao.getAccountStatementById(request.getAccountId());
-        if(accountStatements.size()==0){
+        if(accountStatements.isEmpty()){
             log.error("Account Id, {} not found!!!", request.getAccountId());
             throw new InvalidRequestException("Account Id not valid");
         }
@@ -99,7 +100,7 @@ public class AccountServiceImpl implements AccountService {
 
     private AccountStatementResposne filterLastThreeMonthStatement(List<AccountStatement> accountStatements){
 
-         Function<String,String> maskedAccountNumber=(s)-> "XXXXXXXXX".concat(s.substring(9));
+         UnaryOperator<String> maskedAccountNumber=s-> "XXXXXXXXX".concat(s.substring(9));
 
          AccountStatementResposne response=AccountStatementResposne.builder()
                  .accountId(accountStatements.get(0).getId())
@@ -125,7 +126,7 @@ public class AccountServiceImpl implements AccountService {
 
       private AccountStatementResposne filterStatementForAdmin(List<AccountStatement> accountStatements,AccountStatementRequest request){
 
-          Function<String,String> maskedAccountNumber=(s)-> "XXXXXXXXX".concat(s.substring(9));
+          UnaryOperator<String> maskedAccountNumber=s-> "XXXXXXXXX".concat(s.substring(9));
 
           AccountStatementResposne response=AccountStatementResposne.builder()
                   .accountId(accountStatements.get(0).getId())

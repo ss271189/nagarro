@@ -3,7 +3,7 @@ package com.ss.nagarro.config;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import lombok.Generated;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -15,11 +15,12 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Component
+@Slf4j
 public class JwtTokenUtil implements Serializable {
 
 	private static final long serialVersionUID = -2550185165626007488L;
 	
-	public static final long JWT_TOKEN_VALIDITY = 5*60;
+	public static final long JWT_TOKEN_VALIDITY = 5*60L;
 
 	@Value("${jwt.secret}")
 	private String secret;
@@ -51,7 +52,7 @@ public class JwtTokenUtil implements Serializable {
 	}
 
 	private Boolean ignoreTokenExpiration(String token) {
-		// here you specify tokens, for that the expiration is ignored
+		log.info("Token {}",token);
 		return false;
 	}
 
