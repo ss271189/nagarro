@@ -35,8 +35,7 @@ public class JwtAuthenticationController {
 
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
-		final UserDetails userDetails = jwtInMemoryUserDetailsService
-				.loadUserByUsername(authenticationRequest.getUsername());
+		final UserDetails userDetails = jwtInMemoryUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
         // To add claim in Jwt token
 		String role="USER";
 		if(userDetails.getUsername().equalsIgnoreCase("ADMIN")){

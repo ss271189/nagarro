@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 @Service
@@ -72,7 +71,7 @@ public class AccountServiceImpl implements AccountService {
                 log.error("Both dates should be passed");
                 throw new InvalidRequestException("Both dates should be passed");
             }
-            if (request.getToDate().isAfter(request.getFromDate())) {
+            if (request.getToDate().isBefore(request.getFromDate())) {
                 log.error("To date should not be after from date");
                 throw new InvalidRequestException("To date should not be after from date");
             }

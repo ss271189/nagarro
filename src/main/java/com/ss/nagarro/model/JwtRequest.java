@@ -1,8 +1,11 @@
 package com.ss.nagarro.model;
 
+import lombok.Builder;
+
 import java.io.Serializable;
 
 
+@Builder
 public class JwtRequest implements Serializable {
 
 	private static final long serialVersionUID = 5926468583005150707L;

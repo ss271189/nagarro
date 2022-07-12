@@ -7,6 +7,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Data
+@Builder
 public class AccountStatementRequest {
 
     @NonNull

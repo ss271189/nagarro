@@ -47,7 +47,7 @@ public class AccountDaoImpl implements AccountDao {
                                 .build();
                     }
                 });
-        log.info("Total numbers of records fetched for Accound Id:{} are {}",accountId,accountList.size());
+        log.info("Total numbers of records fetched for Account Id:{} are {}",accountId,accountList.size());
         return accountList;
     }
 
